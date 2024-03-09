@@ -1,6 +1,7 @@
 #include "binary_tree_cli.hpp"
 #include <iostream>
 
+/*This function will show the option on the CLI to interact*/
 void BinaryTreeCli::run(){
     while(true){
         std::cout<<"\
@@ -47,6 +48,7 @@ void BinaryTreeCli::run(){
     }
 }
 
+/*This function will help in the traversal options on the CLI*/
 void BinaryTreeCli::traverse(){
     while(true){
         std::cout<<"\

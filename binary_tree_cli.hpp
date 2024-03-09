@@ -32,15 +32,6 @@ CLI Menu
 3.Search
 4.Traverse
 
-
-On Selecting 1
-Enter the value to insert: 45
-45 is inserted into the tree
---go to the main menu
-
-
-
-
 */
 
 

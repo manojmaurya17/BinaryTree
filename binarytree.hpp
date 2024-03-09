@@ -27,7 +27,8 @@ class Tree{
     // std::string LevelOrderTraversal(Node* r);
 
     public:
-    // Tree();
+    Tree();
+    Node* Root();
     // Tree(Node* r);
     // ~Tree();
     void Insert(int d);
