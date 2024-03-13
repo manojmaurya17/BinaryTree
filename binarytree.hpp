@@ -20,18 +20,19 @@ struct Node{
 class Tree{
     Node* root;
 
-    Node* InsertNode(Node* n,int d);
+    Node* InsertNodeBST(Node* n,int d);
     std::string InOrderTraversal(Node* r);
     std::string PreOrderTraversal(Node* r);
     std::string PostOrderTraversal(Node* r);
-    // std::string LevelOrderTraversal(Node* r);
+    std::string LevelOrderTraversal(Node* r);
 
     public:
     Tree();
     Node* Root();
     // Tree(Node* r);
     // ~Tree();
-    void Insert(int d);
+    void Insert(int d[]);
+    void InsertBST(int d);
     // int DeleteNode(int d); 
     // bool SearchNode(int d);
 
@@ -39,7 +40,7 @@ class Tree{
     std::string InOrder();
     std::string PreOrder();
     std::string PostOrder();
-    // std::string LevelOrder();
+    std::string LevelOrder();
 };
 
 

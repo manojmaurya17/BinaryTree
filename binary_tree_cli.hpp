@@ -6,12 +6,15 @@
 #define OPTION_DELETE 2
 #define OPTION_SEARCH 3
 #define OPTION_TRAVERSE 4
+#define OPTION_EXIT 5
 
 #define OPTION_TRAVERSAL_INORDER 1
 #define OPTION_TRAVERSAL_PREORDER 2
 #define OPTION_TRAVERSAL_POSTORDER 3
 #define OPTION_TRAVERSAL_LEVELORDER 4
 #define OPTION_TRAVERSAL_MAIN_MENU 5
+
+#define BinaryTreeLength    255
 
 #include "binarytree.hpp"
 

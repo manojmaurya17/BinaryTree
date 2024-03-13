@@ -1,5 +1,5 @@
 #include "binarytree.hpp"
-
+#include<queue>
 
 /* Node Default Constructor*/
 Node::Node(){
@@ -31,22 +31,26 @@ Node* Tree::Root(){
     return this->root;
 }
 
+void Tree::Insert(int d[]){
+    
+}
+
 
 /* Inser the node into the tree in Binary Search Tree Fashion*/
-void Tree::Insert(int d){
-    this->root = InsertNode(this->root,d);
+void Tree::InsertBST(int d){
+    this->root = InsertNodeBST(this->root,d);
 }
 
 /* Helper function for inserting node into the tree in Binary Search Tree Fashion*/
-Node* Tree::InsertNode(Node* n,int d){
+Node* Tree::InsertNodeBST(Node* n,int d){
     if(n==NULL){
         return new Node(d);
     }
 
     if(n->data > d){
-        n->left = InsertNode(n->left,d);
+        n->left = InsertNodeBST(n->left,d);
     }else{
-        n->right = InsertNode(n->right,d);
+        n->right = InsertNodeBST(n->right,d);
     }
     return n;
 }
@@ -105,6 +109,37 @@ std::string Tree::PostOrderTraversal(Node* r){
     s += std::to_string(r->data);
 
     return s;
+}
+
+std::string Tree::LevelOrder(){
+    return LevelOrderTraversal(this->root);
+}
+
+
+std::string Tree::LevelOrderTraversal(Node* r){
+    if(!r){
+        return "";
+    }
+    std::queue<Node*> q;
+    q.push(r);
+    q.push(NULL);
+    std::string ans = "";
+    while(q.front()!=NULL){
+        while(q.front()!=NULL){
+            Node* t = q.front();
+            q.pop();
+            ans += std::to_string(t->data);
+            if(t->left!=NULL){
+                q.push(t->left);
+            }
+            if(t->right!=NULL){
+                q.push(t->right);
+            }
+        }
+        q.pop();
+        q.push(NULL);
+    }
+    return ans;
 }
 
 

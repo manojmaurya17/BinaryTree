@@ -10,6 +10,7 @@ void BinaryTreeCli::run(){
         2. Delete\n \
         3. Search\n \
         4. Travesal\n \
+        5. Exit\n \
         Select one option: ";
 
         int option,d;
@@ -20,7 +21,7 @@ void BinaryTreeCli::run(){
                 system("clear");
                 std::cout<<"Enter integer value to insert into the binary tree: ";
                 std::cin>>d;
-                t.Insert(d);
+                t.InsertBST(d);
                 std::cout<<d<<" has been inserted into the binary tree.\nPress c to continue.";
                 std::cin>>temp;
                 break;
@@ -42,6 +43,11 @@ void BinaryTreeCli::run(){
                 system("clear");
                 traverse();
                 break;
+            case OPTION_EXIT:
+                exit(0);
+                break;
+            default:
+                std::cout<<"Please Enter a Valid Option.";
                 
         }
         system("clear");
@@ -75,8 +81,7 @@ void BinaryTreeCli::traverse(){
                 std::cin>>temp;
                 break;
             case OPTION_TRAVERSAL_LEVELORDER:
-                // this->t->LevelOrder();
-                std::cout<<"Feature is not yet Supported.\nPress c to continue";
+                std::cout<<"Level Order Traversal "<<t.LevelOrder()<<"\nPress c to continue.";
                 std::cin>>temp;
                 break;
             case OPTION_TRAVERSAL_MAIN_MENU:
