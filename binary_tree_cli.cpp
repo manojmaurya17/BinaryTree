@@ -10,7 +10,8 @@ void BinaryTreeCli::run(){
         2. Delete\n \
         3. Search\n \
         4. Travesal\n \
-        5. Exit\n \
+        5. Height\n \
+        6. Exit\n \
         Select one option: ";
 
         int option,d;
@@ -42,6 +43,11 @@ void BinaryTreeCli::run(){
             case OPTION_TRAVERSE:
                 system("clear");
                 traverse();
+                break;
+            case OPTION_HEIGHT:
+                system("clear");
+                std::cout<<"The Height of the Tree is : "<<t.Height()<<"\nPress c to continue.";
+                std::cin>>temp;
                 break;
             case OPTION_EXIT:
                 exit(0);

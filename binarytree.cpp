@@ -111,11 +111,13 @@ std::string Tree::PostOrderTraversal(Node* r){
     return s;
 }
 
+/*Level Order Traversal*/
 std::string Tree::LevelOrder(){
     return LevelOrderTraversal(this->root);
 }
 
-
+/*Helper function for level order traversal*/
+/*It will use queue to store the nodes of one level*/
 std::string Tree::LevelOrderTraversal(Node* r){
     if(!r){
         return "";
@@ -142,4 +144,26 @@ std::string Tree::LevelOrderTraversal(Node* r){
     return ans;
 }
 
+/*Height of the Tree*/
+int Tree::Height(){
+    return HeightOfTheTree(this->root);
+}
+
+/*Helper function for finding height of the tree*/
+/*Intution : Right and left node will give it's height we will just compare which is 
+larger and will return (largerOfBoth+1)*/
+int Tree::HeightOfTheTree(Node* r){
+    if(!r){
+        return 0;
+    }
+
+    int height=0;
+    if(r->left!=NULL){
+        height = std::max(height,HeightOfTheTree(r->left));
+    }
+    if(r->right!=NULL){
+        height = std::max(height,HeightOfTheTree(r->right));
+    }
+    return height+1;
+}
 

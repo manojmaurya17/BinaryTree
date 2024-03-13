@@ -25,6 +25,7 @@ class Tree{
     std::string PreOrderTraversal(Node* r);
     std::string PostOrderTraversal(Node* r);
     std::string LevelOrderTraversal(Node* r);
+    int HeightOfTheTree(Node* r);
 
     public:
     Tree();
@@ -33,6 +34,7 @@ class Tree{
     // ~Tree();
     void Insert(int d[]);
     void InsertBST(int d);
+    int Height();
     // int DeleteNode(int d); 
     // bool SearchNode(int d);
 
