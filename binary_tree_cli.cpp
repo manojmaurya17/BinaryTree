@@ -75,7 +75,7 @@ void BinaryTreeCli::traverse(){
         std::cin>>option;
         switch(option){
             case OPTION_TRAVERSAL_INORDER:
-                std::cout<<"InOrder : "<<t.InOrder()<<"\nPress c to Continue";
+                std::cout<<"InOrder : "<<t.InOrderIterative()<<"\nPress c to Continue";
                 std::cin>>temp;
                 break;
             case OPTION_TRAVERSAL_PREORDER:

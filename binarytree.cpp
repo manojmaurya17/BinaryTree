@@ -1,5 +1,7 @@
 #include "binarytree.hpp"
 #include<queue>
+#include<stack>
+#include<unordered_map>
 
 /* Node Default Constructor*/
 Node::Node(){
@@ -60,6 +62,13 @@ std::string Tree::InOrder(){
     return InOrderTraversal(this->root);
 }
 
+/*Iterative inorder traversal
+*/
+std::string Tree::InOrderIterative()
+{
+    return InOrderTraversalIterative(this->root);
+}
+
 /*Helper function for inorder traversal*/
 std::string Tree::InOrderTraversal(Node* r){
     if(r==NULL){
@@ -70,6 +79,33 @@ std::string Tree::InOrderTraversal(Node* r){
     s += std::to_string(r->data);
     s+= InOrderTraversal(r->right);
     return s;
+}
+
+/*
+Inorder iterative
+*/
+
+
+std::string Tree::InOrderTraversalIterative(Node *r)
+{
+    std::stack<Node*> s;
+
+    Node* curr = r;
+    std::string ans="";
+    while(s.size()!=0 || curr){
+        if(curr){
+            s.push(curr);
+            curr = curr->left;
+        }else{
+            curr = s.top();
+            s.pop();
+
+            ans+=std::to_string(curr->data);
+
+            curr = curr->right;
+        }
+    }
+    return ans;
 }
 
 /*Traversal - Preorder*/
