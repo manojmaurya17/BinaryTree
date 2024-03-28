@@ -108,6 +108,15 @@ std::string Tree::InOrderTraversalIterative(Node *r)
     return ans;
 }
 
+
+
+/*Iterative preorder traversal
+*/
+std::string Tree::PreOrderIterative()
+{
+    return PreOrderTraversalIterative(this->root);
+}
+
 /*Traversal - Preorder*/
 std::string Tree::PreOrder(){
     return PreOrderTraversal(this->root);
@@ -125,6 +134,28 @@ std::string Tree::PreOrderTraversal(Node* r){
     s += PreOrderTraversal(r->right);
 
     return s;
+}
+
+
+std::string Tree::PreOrderTraversalIterative(Node* r){
+    std::stack<Node*> s;
+
+    std::string ans = "";
+    s.push(r);
+    while(s.size()!=0){
+        Node* c = s.top();
+        s.pop();
+
+        ans += std::to_string(c->data);
+
+        if(c->right){
+            s.push(c->right);
+        }
+        if(c->left){
+            s.push(c->left);
+        }
+    }
+    return ans;
 }
 
 /*Traversal - PostOrder*/

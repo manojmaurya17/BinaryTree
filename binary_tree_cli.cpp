@@ -79,7 +79,7 @@ void BinaryTreeCli::traverse(){
                 std::cin>>temp;
                 break;
             case OPTION_TRAVERSAL_PREORDER:
-                std::cout<<"PreOrder : "<<t.PreOrder()<<"\nPress c to Continue";
+                std::cout<<"PreOrder : "<<t.PreOrderIterative()<<"\nPress c to Continue";
                 std::cin>>temp;
                 break;
             case OPTION_TRAVERSAL_POSTORDER:

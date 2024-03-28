@@ -23,6 +23,7 @@ class Tree{
     Node* InsertNodeBST(Node* n,int d);
     std::string InOrderTraversal(Node* r);
     std::string InOrderTraversalIterative(Node* r);
+    std::string PreOrderTraversalIterative(Node* r);
     std::string PreOrderTraversal(Node* r);
     std::string PostOrderTraversal(Node* r);
     std::string LevelOrderTraversal(Node* r);
@@ -43,6 +44,7 @@ class Tree{
     std::string InOrder();
     std::string InOrderIterative();
     std::string PreOrder();
+    std::string PreOrderIterative();
     std::string PostOrder();
     std::string LevelOrder();
 };
